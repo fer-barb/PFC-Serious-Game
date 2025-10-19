@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerJogo = document.getElementById('container-jogo');
     const inputNomeJogador = document.getElementById('nome-jogador');
     const botaoIniciar = document.getElementById('botao-iniciar');
+    const tituloCenario = document.getElementById('titulo-cenario');
     
-    const textoNumeroCenario = document.getElementById('numero-cenario');
+    tituloCenario.innerText = `Cenário ${indice + 1} de ${scenarios.length}`;
     const textoPontuacao = document.getElementById('texto-pontuacao');
     const textoCenario = document.getElementById('texto-cenario');
     const containerEscolhas = document.getElementById('container-escolhas');
@@ -164,3 +165,4 @@ document.addEventListener('DOMContentLoaded', () => {
     
     botaoIniciar.addEventListener('click', iniciar_jogo);
 });
+
