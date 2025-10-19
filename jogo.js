@@ -4,7 +4,6 @@ import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/fi
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
     const scenarios = [
         {
             text: "Durante o planejamento de um projeto de TI de porte médio, o cliente pede uma redução no prazo de entrega. Ele gostaria que o projeto fosse concluído “para ontem” devido às pressões dos concorrentes e quer um cronograma atualizado com metade do tempo planejado. \n Além disso, o orçamento proposto é cerca de 30% inferior do que o valor estimado para sua equipe. Como gerente de projeto, qual a sua ação?",
@@ -52,9 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerJogo = document.getElementById('container-jogo');
     const inputNomeJogador = document.getElementById('nome-jogador');
     const botaoIniciar = document.getElementById('botao-iniciar');
-    const tituloCenario = document.getElementById('titulo-cenario');
     
-    tituloCenario.innerText = `Cenário ${indice + 1} de ${scenarios.length}`;
+    const tituloCenario = document.getElementById('titulo-cenario'); // Encontra o H1
     const textoPontuacao = document.getElementById('texto-pontuacao');
     const textoCenario = document.getElementById('texto-cenario');
     const containerEscolhas = document.getElementById('container-escolhas');
@@ -101,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarCenario(indice) {
-        textoNumeroCenario.innerText = `${indice + 1} de ${scenarios.length}`;
+        tituloCenario.innerText = `Cenário ${indice + 1} de ${scenarios.length}`;
+        
         const cenario = scenarios[indice];
         textoCenario.innerText = cenario.text;
         
@@ -165,4 +164,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     botaoIniciar.addEventListener('click', iniciar_jogo);
 });
+
 
