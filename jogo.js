@@ -1,4 +1,3 @@
-
 import { bancodedados } from './chavefire.js';
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
@@ -51,11 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const containerJogo = document.getElementById('container-jogo');
     const inputNomeJogador = document.getElementById('nome-jogador');
     const botaoIniciar = document.getElementById('botao-iniciar');
-    
+  
     const tituloCenario = document.getElementById('titulo-cenario'); // Encontra o H1
     const textoPontuacao = document.getElementById('texto-pontuacao');
     const textoCenario = document.getElementById('texto-cenario');
     const containerEscolhas = document.getElementById('container-escolhas');
+
     
     const containerResultados = document.getElementById('container-resultados');
     const textoPontuacaoFinal = document.getElementById('texto-pontuacao-final');
@@ -66,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let pontuacao = 0;
     let nome_jogador = "";
 
-    botaoIniciar.disabled = true; 
     inputNomeJogador.addEventListener('input', () => {
         if (inputNomeJogador.value.trim() !== "") {
             botaoIniciar.disabled = false;
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (nome_jogador.length > 30) {
-            nome_jogador = nome_jogador.substring(0, 30) + "...";
+            nome_jogador = nome_jogador.substring(0, 30);
         }
         
         containerInicio.classList.add('escondido');
@@ -164,5 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     botaoIniciar.addEventListener('click', iniciar_jogo);
 });
+
 
 
