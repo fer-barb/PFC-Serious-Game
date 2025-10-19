@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serious Game - Treinamento de GP</title>
@@ -21,17 +19,17 @@
                 <h1>Gerenciando a Tríplice Restrição</h1>
                 <p>Insira seu nome para iniciar o treinamento e registrar sua pontuação no ranking.</p>
                 <input type="text" id="nome-jogador" placeholder="Digite seu nome aqui...">
-                <button id="botao-iniciar" class="botao-escolha">Iniciar Jogo</button>
+                <button id="botao-iniciar" class="botao-escolha" disabled>Iniciar Jogo</button>
             </div>
         </div>
 
         <div id="container-jogo" class="container-jogo escondido">
             <div id="cabecalho">
-                <h1 id="titulo-cenario">Cenário 1 de 5</h1>
+                <h1 id="titulo-cenario">Carregando...</h1>
                 <div id="pontuacao">Pontuação: <span id="texto-pontuacao">0</span></div>
             </div>
             <div class="area-jogo">
-                <p id="texto-cenario">Carregando</p>
+                <p id="texto-cenario">Carregando...</p>
                 <div id="container-escolhas"></div>
             </div>
             <div id="container-resultados" class="escondido">
@@ -39,8 +37,7 @@
                 <p>Sua nota final de desempenho foi:</p>
                 <h3 id="texto-pontuacao-final">0</h3>
                 <p id="texto-feedback"></p>
-                <p id="mensagem-redirecionamento">Você será redirecionado para o placar</p>
-                
+                <p id="mensagem-redirecionamento">Você será redirecionado para o placar em 5 segundos...</p>
                 <a href="rankingdejogadores.html" id="botao-ver-ranking" class="botao-escolha">Ver o placar agora</a>
             </div>
         </div>
@@ -48,5 +45,7 @@
 
     <script type="module" src="jogo.js"></script>
 </body>
+</html>
 
 </html>
+
