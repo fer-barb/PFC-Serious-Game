@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const textoCenario = document.getElementById('texto-cenario');
     const containerEscolhas = document.getElementById('container-escolhas');
     
-    // ElementosFeedback
+    // elementos feedback
     const modalFeedback = document.getElementById('modal-feedback');
     const textoFeedbackModal = document.getElementById('texto-feedback-modal');
     const botaoProximo = document.getElementById('botao-proximo');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nome_jogador = inputNomeJogador.value.trim();
         
         if (nome_jogador === "") {
-            alert("Digite seu nome para começar.");
+            alert("Digite seu nome para iniciar");
             return;
         }
         
@@ -169,29 +169,31 @@ document.addEventListener('DOMContentLoaded', () => {
         cenario.choices.forEach(escolha => {
             const botao = document.createElement('button');
             botao.innerText = escolha.text;
-            
             botao.classList.add('botao-escolha');
-            // Alterado: agora passamos o objeto 'escolha' inteiro, não só os pontos
+            
             botao.addEventListener('click', () => mostrarFeedback(escolha));
+            
             containerEscolhas.appendChild(botao);
         });
     }
 
-    // explicação
     function mostrarFeedback(escolha) {
-        // Atualiza pontuação
+        // 1. atualiza pontuação
         pontuacao += escolha.points;
         textoPontuacao.innerText = pontuacao;
 
-        // Mostra o modal
+        // texto de feedback
         textoFeedbackModal.innerText = escolha.feedback;
+
+        // remove a classe escondid
         modalFeedback.classList.remove('escondido');
     }
 
-    // próximo
     botaoProximo.addEventListener('click', () => {
-        modalFeedback.classList.add('escondido'); // Esconder modal
-        avancarCenario(); // Vai para o próximo
+        // esconde modal
+        modalFeedback.classList.add('escondido');
+        // avança no jogo
+        avancarCenario();
     });
 
     function avancarCenario() {
@@ -205,10 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function mostrarResultados() {
+        // esconde área
         document.querySelector('#container-jogo .area-jogo').classList.add('escondido');
-        containerResultados.classList.remove('escondido');
-        // esconder cabeçalho
+        // esconde cabeçalho
         document.getElementById('cabecalho').classList.add('escondido');
+        
+        containerResultados.classList.remove('escondido');
 
         textoPontuacaoFinal.innerText = pontuacao;
         let mensagemFeedback = '';
@@ -234,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
             textoFeedback.innerText += "\n(não foi possível salvar seu score no ranking.)";
         }
         
-        // tempo
         setTimeout(() => {
             window.location.href = 'rankingdejogadores.html';
         }, 8000);
@@ -242,6 +245,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     botaoIniciar.addEventListener('click', iniciar_jogo);
 });
-
 
 
