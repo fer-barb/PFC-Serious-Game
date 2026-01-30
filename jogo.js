@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarFeedback(escolha) {
-        // 1. atualiza pontuação
+        // atualiza pontuação
         pontuacao += escolha.points;
         textoPontuacao.innerText = pontuacao;
 
@@ -245,5 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     botaoIniciar.addEventListener('click', iniciar_jogo);
 });
+
 
 
